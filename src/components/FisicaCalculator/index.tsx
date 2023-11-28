@@ -1,4 +1,5 @@
 // "use client";
+import { calcularAceleracion, calcularDistanciaMRUA, calcularEnergiaCineticaMRU, calcularPotenciaMRU, calcularPotenciaMRUA, calcularPotenciaYTrabajo, calcularTrabajoMRU, calcularTrabajoMRUA, calcularTrabajoYEnergiaCinetica, calcularVelocidadFinal, calcularVelocidadPromedio, primeraLeyDeNewton, segundaLeyDeNewton, terceraLeyDeNewton, trabajoMRUA } from "@/src/physicalFormulas";
 import Image from "next/image";
 
 const FisicaCalculator = () => {
@@ -24,7 +25,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularVelocidadPromedio(20,10)}
               disabled
             />
           </div>
@@ -47,7 +48,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularTrabajoMRU()}
               disabled
             />
           </div>
@@ -70,7 +71,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularPotenciaMRU()}
               disabled
             />
           </div>
@@ -93,7 +94,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularEnergiaCineticaMRU(3,10)}
               disabled
             />
           </div>
@@ -117,7 +118,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularAceleracion(10,0,200)}
               disabled
             />
           </div>
@@ -140,7 +141,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularVelocidadFinal(10, 20, 4)}
               disabled
             />
           </div>
@@ -163,7 +164,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularDistanciaMRUA(5, 2, 3)}
               disabled
             />
           </div>
@@ -186,7 +187,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularTrabajoMRUA(10, 15, Math.PI / 4)}
               disabled
             />
           </div>
@@ -209,7 +210,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularPotenciaMRUA(calcularTrabajoMRUA(10, 15, Math.PI / 4), 5)}
               disabled
             />
           </div>
@@ -233,7 +234,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={primeraLeyDeNewton()}
               disabled
             />
           </div>
@@ -256,7 +257,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={segundaLeyDeNewton(5, 3)}
               disabled
             />
           </div>
@@ -279,7 +280,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={terceraLeyDeNewton()}
               disabled
             />
           </div>
@@ -303,7 +304,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularTrabajoYEnergiaCinetica(10, 5, 2, 0, 4)}
               disabled
             />
           </div>
@@ -326,7 +327,7 @@ const FisicaCalculator = () => {
               id="disabled-input-2"
               aria-label="disabled input 2"
               className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value="resultado"
+              value={calcularPotenciaYTrabajo(30, 5)}
               disabled
             />
           </div>
